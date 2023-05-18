@@ -39,9 +39,9 @@ jobs:
           push: ${{ github.event_name == 'push' && (startsWith(github.ref, 'refs/heads/main') || startsWith(github.ref, 'refs/tags/v')) }}
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
-          tags: vivan27/Devops-task-8:${{ github.sha }}
+          tags: vivan27/devops-task-8:${{ github.sha }}
 
       - name: Run Unit Tests
         run: |
-          docker pull vivan27/Devops-task-8:${{ github.sha }}
-          docker run --rm vivan27/Devops-task-8:${{ github.sha }} python manage.py test
+          docker pull vivan27/devops-task-8:${{ github.sha }}
+          docker run --rm vivan27/devops-task-8:${{ github.sha }} python manage.py test
